@@ -25,7 +25,7 @@ rpm -ivh epel-release-7-10.noarch.rpm
 
 
 # Next, install additional handy software
-yum -y install htop screen smartmontools wireshark docker git OpenIPMI ipmitool ipmiutil
+yum -y install htop screen smartmontools wireshark docker git OpenIPMI ipmitool ipmiutil vim
 
 # Descriptions:
 #  htop: System process manager, like 'top', but more human-readable.
@@ -37,7 +37,21 @@ yum -y install htop screen smartmontools wireshark docker git OpenIPMI ipmitool 
 #  git: Version-control system used to get container configurations.
 #  OpenIPMI, ipmitool, ipmiutil: Tools for utilizing the IPMI capabilities
 #    of the server
+#  vim: VI Improved text editor
 
 
 
+# Enable SSH and set default boot target to graphical
+systemctl start sshd
+systemctl enable sshd
+systemctl set-default graphical.target
+
+
+
+# Reboot system to enable graphical usage in case that is helpful for the user
+echo ""
+echo " Rebooting into graphical environment in 10 seconds"
+echo ""
+sleep 10
+restart
 
