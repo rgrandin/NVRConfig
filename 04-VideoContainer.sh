@@ -8,12 +8,13 @@
 
 
 # First get the container configuration data
-git clone git@github.com:rgrandin/UniFi-Video-Controller.git
+cd ..
+git clone https://github.com/rgrandin/UniFi-Video-Controller.git
 
 
 
 # Enter the new directory and run the setup scripts
-cd docker-unifi.git
+cd UniFi-Video-Controller 
 ./directories.setup  # Configures directories on this host machine for container usage
 ./create.sh          # Builds the container image & starts the container
 ./systemd.setup      # Configures the container for auto-start at system boot

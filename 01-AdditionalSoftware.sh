@@ -11,8 +11,8 @@
 # 
 # The '-y' option assumes "yes" when prompted so the
 # install doesn't require user interaction.
-yum -y install groups "KDE Plasma Workspaces"
-
+yum -y groupinstall "KDE Plasma Workspaces"
+yum -y install wget
 
 
 
@@ -53,5 +53,5 @@ echo ""
 echo " Rebooting into graphical environment in 10 seconds"
 echo ""
 sleep 10
-restart
+reboot
 
